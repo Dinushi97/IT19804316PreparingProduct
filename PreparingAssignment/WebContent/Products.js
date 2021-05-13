@@ -1,5 +1,6 @@
 $(document).ready(function()
 { 
+alert("Product.js file conncted")
 if ($("#alertSuccess").text().trim() == "") 
  { 
  $("#alertSuccess").hide(); 
@@ -28,7 +29,7 @@ var type = ($("#hidProductIDSave").val() == "") ? "POST" : "PUT";
  { 
  url : "ProductAPI", 
  type : type, 
- data : $("#FormProduct").serialize(), 
+ data : $("#formProduct").serialize(), 
  dataType : "text", 
  complete : function(response, status) 
  { 
@@ -62,20 +63,19 @@ if (status == "success")
  $("#alertError").show(); 
  } 
  $("#hidProductIDSave").val(""); 
- $("#FormProduct")[0].reset(); 
+ $("#formProduct")[0].reset(); 
 }
-
-
 
 
 // UPDATE==========================================
 $(document).on("click", ".btnUpdate", function(event) 
 { 
- $("#hidProductIDSave").val($(this).closest("tr").find('#hidItemIDUpdate').val());
+ $("#hidProductIDSave").val($(this).closest("tr").find('#hidProductIDUpdate').val());
  $("#productName").val($(this).closest("tr").find('td:eq(0)').text()); 
  $("#productType").val($(this).closest("tr").find('td:eq(1)').text()); 
- $("#productDesc").val($(this).closest("tr").find('td:eq(2)').text()); 
- $("#ClosingDate").val($(this).closest("tr").find('td:eq(3)').text()); 
+ $("#minimumPrice").val($(this).closest("tr").find('td:eq(2)').text());
+ $("#productDesc").val($(this).closest("tr").find('td:eq(3)').text()); 
+ $("#ClosingDate").val($(this).closest("tr").find('td:eq(5)').text()); 
 }); 
 
 
@@ -85,7 +85,7 @@ $(document).on("click", ".btnRemove", function(event)
  { 
  url : "ProductAPI", 
  type : "DELETE", 
- data : "productID=" + $(this).data("productid"),
+ data : "productID=" + $(this).data("ProductID"),
  dataType : "text", 
  complete : function(response, status) 
  { 
@@ -119,7 +119,7 @@ if (status == "success")
  }
  }
 // CLIENT-MODEL================================================================
-function validateItemForm() 
+function validateProductForm() 
 { 
 // NAME
 if ($("#productName").val().trim() == "") 

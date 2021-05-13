@@ -68,8 +68,8 @@ try
 		output += "<td>" + productEndDate + "</td>"; 
 		
 		// buttons
-		output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
-			   + "<td><input name='btnRemove' type='button' value='Remove' class='btn btn-danger'data-productid='" + productID + "'>" + "</td></tr>"; 
+		output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary' >" + "</td>"
+			   + "<td><input name='btnRemove' type='button' value='Remove' class='btn btn-danger 'data-ProductID='" + productID + "'>" + "</td></tr>"; 
 		 //+ "<td>"
 		   //+ "<form method='post' action='items.jsp'>"
 	} 
@@ -138,7 +138,7 @@ return output;
 	
 	//////////////////////////////// Upadate Item //////////////////////////////
 	
-	public String updateProduct(String ProductID, String productName, String ProductType, String productDescription, String productEndDate)
+	public String updateProduct(String ProductID, String productName, String ProductType,String ProductPrice, String productDescription, String productEndDate)
 	{ 
 		String output = ""; 
 		try
@@ -150,12 +150,13 @@ return output;
 			} 
 			
 			// create a prepared statement
-			String query = "UPDATE product SET `ProductName`=?,`ProductType`=?,`ProductDescription`=?,`ClosingDate`=? WHERE `ProductID`=?"; 
+			String query = "UPDATE product SET `ProductName`=?,`ProductType`=?,`MinimumPrice`=?,`ProductDescription`=?,`ClosingDate`=? WHERE `ProductID`=?"; 
 			PreparedStatement preparedStmt = con.prepareStatement(query); 
 			
 			// binding values
 			preparedStmt.setString(1, productName); 
 			preparedStmt.setString(2, ProductType); 
+			preparedStmt.setDouble(4, Double.parseDouble(ProductPrice)); 
 			preparedStmt.setString(3, productDescription); 
 			preparedStmt.setString(4, productEndDate);
 			preparedStmt.setInt(5, Integer.parseInt(ProductID)); 

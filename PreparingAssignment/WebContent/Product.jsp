@@ -7,13 +7,13 @@ pageEncoding="ISO-8859-1"%>
 <meta charset="ISO-8859-1">
 <title>Items Management</title>
 <link rel="stylesheet" href="Views/bootstrap.min.css">
-<script src="Components/jquery-3.2.1.min.js"></script>
-<script src="Components/items.js"></script>
+<script src="jquery-3.2.1.min.js"></script>
+<script src="product.js"></script>
 </head>
 <body> 
 <div class="container"><div class="row"><div class="col-6"> 
 <h1>Items Management V10.1</h1>
-<form id="FormProduct" name="FormProduct">
+<form id="formProduct" name="formProduct">
 Product Name: 
  <input id="productName" name="productName" type="text" 
  class="form-control form-control-sm">
@@ -30,10 +30,8 @@ Product Name:
  <input id="ClosingDate" name="ClosingDate" type="text" 
  class="form-control form-control-sm">
  <br>
- <input id="btnSave" name="btnSave" type="button" value="Save" 
- class="btn btn-primary">
- <input type="hidden" id="hidProductIDSave" 
- name="hidProductIDSave" value="">
+ <input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary">
+ <input type="hidden" id="hidProductIDSave" name="hidProductIDSave" value="">
 </form>
 <div id="alertSuccess" class="alert alert-success"></div>
 <div id="alertError" class="alert alert-danger"></div>

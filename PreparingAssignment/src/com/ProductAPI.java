@@ -56,6 +56,7 @@ public class ProductAPI extends HttpServlet {
 		String output = productObj.updateProduct(paras.get("hidProductIDSave").toString(), 
 		paras.get("productName").toString(), 
 		paras.get("productType").toString(), 
+		paras.get("minimumPrice").toString(),
 		paras.get("productDesc").toString(),
 		paras.get("ClosingDate").toString()); 
 		response.getWriter().write(output);
