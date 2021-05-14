@@ -12,7 +12,7 @@ public class Product {
 		Connection con = null; 
 		try
 		{ 
-			Class.forName("com.mysql.cj.jdbc.Driver"); 
+			Class.forName("com.mysql.jdbc.Driver"); 
 			
 			//Provide the correct details: DBServer/DBName, username, password 
 			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/product_and_seller_management", "root", ""); 
@@ -68,8 +68,9 @@ try
 		output += "<td>" + productEndDate + "</td>"; 
 		
 		// buttons
-		output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary' >" + "</td>"
-			   + "<td><input name='btnRemove' type='button' value='Remove' class='btn btn-danger 'data-ProductID='" + productID + "'>" + "</td></tr>"; 
+		output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary' data-productid='"+ productID + "' ></td>"
+			   + "<td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-productid='" 
+				+ productID + "'>" + "</td></tr>"; 
 		 //+ "<td>"
 		   //+ "<form method='post' action='items.jsp'>"
 	} 
@@ -156,10 +157,10 @@ return output;
 			// binding values
 			preparedStmt.setString(1, productName); 
 			preparedStmt.setString(2, ProductType); 
-			preparedStmt.setDouble(4, Double.parseDouble(ProductPrice)); 
-			preparedStmt.setString(3, productDescription); 
-			preparedStmt.setString(4, productEndDate);
-			preparedStmt.setInt(5, Integer.parseInt(ProductID)); 
+			preparedStmt.setDouble(3, Double.parseDouble(ProductPrice)); 
+			preparedStmt.setString(4, productDescription); 
+			preparedStmt.setString(5, productEndDate);
+			preparedStmt.setInt(6, Integer.parseInt(ProductID)); 
 			
 			// execute the statement
 			preparedStmt.execute(); 
@@ -178,7 +179,7 @@ return output;
 	
 	/////////////////////////// Delete Item /////////////////////////////////////////////////////
 	
-	public String deleteProduct(String productID) 
+	public String deleteProduct(String ProductID) 
 	{ 
 		String output = ""; 
 		try
@@ -194,7 +195,7 @@ return output;
 			PreparedStatement preparedStmt = con.prepareStatement(query); 
 			
 			// binding values
-			preparedStmt.setInt(1, Integer.parseInt(productID)); 
+			preparedStmt.setInt(1, Integer.parseInt(ProductID)); 
 			
 			// execute the statement
 			preparedStmt.execute(); 

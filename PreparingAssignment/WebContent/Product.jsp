@@ -5,14 +5,14 @@ pageEncoding="ISO-8859-1"%>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Items Management</title>
+<title>Products Management</title>
 <link rel="stylesheet" href="Views/bootstrap.min.css">
 <script src="jquery-3.2.1.min.js"></script>
 <script src="product.js"></script>
 </head>
 <body> 
 <div class="container"><div class="row"><div class="col-6"> 
-<h1>Items Management V10.1</h1>
+<h1>Products Management V10.1</h1>
 <form id="formProduct" name="formProduct">
 Product Name: 
  <input id="productName" name="productName" type="text" 
