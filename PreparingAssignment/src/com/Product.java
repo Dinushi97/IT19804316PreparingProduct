@@ -88,7 +88,7 @@ return output;
 }
 	
 	
-	////////////////Insert Product///////////////////////////////
+	////////////////Insert Product///////////////////////////////////
 	public String insertProduct(String productName, String ProductType, String productPrice, String productDescription,String productEndDate) 
 	{ 
 		String output = "";
