@@ -7,8 +7,8 @@ pageEncoding="ISO-8859-1"%>
 <meta charset="ISO-8859-1">
 <title>Products Management</title>
 <link rel="stylesheet" href="Views/bootstrap.min.css">
-<script src="jquery-3.2.1.min.js"></script>
-<script src="product.js"></script>
+<script src="Component/jquery-3.2.1.min.js"></script>
+<script src="Component/Products.js"></script>
 </head>
 <body> 
 <div class="container"><div class="row"><div class="col-6"> 

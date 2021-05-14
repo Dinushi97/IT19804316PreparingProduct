@@ -70,7 +70,7 @@ if (status == "success")
 // UPDATE==========================================
 $(document).on("click", ".btnUpdate", function(event) 
 { 
- $("#hidProductIDSave").val($(this).closest("tr").find('#hidProductIDUpdate').val());
+ $("#hidProductIDSave").val($(this).data("productid"));
  $("#productName").val($(this).closest("tr").find('td:eq(0)').text()); 
  $("#productType").val($(this).closest("tr").find('td:eq(1)').text()); 
  $("#minimumPrice").val($(this).closest("tr").find('td:eq(2)').text());
@@ -85,7 +85,7 @@ $(document).on("click", ".btnRemove", function(event)
  { 
  url : "ProductAPI", 
  type : "DELETE", 
- data : "productID=" + $(this).data("ProductID"),
+ data : "productID=" + $(this).data("productid"),
  dataType : "text", 
  complete : function(response, status) 
  { 
@@ -150,9 +150,9 @@ if ($("#productDesc").val().trim() == "")
  return "Insert Product Description."; 
  } 
  // CLOSING DATE------------------------
-if ($("#productDesc").val().trim() == "") 
+if ($("#ClosingDate").val().trim() == "") 
  { 
- return "Insert Product Description."; 
+ return "Insert Closing Date."; 
  }
 return true; 
 }
